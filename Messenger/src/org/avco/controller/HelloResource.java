@@ -6,11 +6,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/hello")
-public class HelloController {
+public class HelloResource {
 
+	
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String sayHtmlHello() {
-		return "Hello from Jersey";
+		return "Hello World!!";
 	}
+	
+	
 }

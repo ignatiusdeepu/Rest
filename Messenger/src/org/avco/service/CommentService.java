@@ -12,7 +12,21 @@ public class CommentService {
 
 	private Map<Long, Message> messages = DatabaseClass.getMessages();
 
+	public CommentService() {
+		messages.put(1L, new Message(1, "Hello World", "John"));
+		messages.put(2L, new Message(2, "Hello Jersey", "Tom"));
+	}
 	public List<Comment> getAllComments(long messageId) {
+		Comment comment = new Comment();
+		comment.setAuthor("Tom");
+		comment.setMessage("Messege commented");
+		comment.setId(1l);
+		messages.get(messageId).getComments().put(1L, comment);
+		comment = new Comment();
+		comment.setAuthor("John");
+		comment.setMessage("new comment");
+		comment.setId(2l);
+		messages.get(messageId).getComments().put(2L, comment);
 		Map<Long, Comment> comments = messages.get(messageId).getComments();
 		return new ArrayList<Comment>(comments.values());
 	}

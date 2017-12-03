@@ -21,8 +21,8 @@ import org.avco.datamodel.Message;
 import org.avco.service.MessageService;
 
 @Path("/messages")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)//what kind of data we are expecting from the request.
+@Produces(MediaType.APPLICATION_JSON)//what kind of data we send as part of response.
 public class MessageResource {
 
 	MessageService messageService = new MessageService();
